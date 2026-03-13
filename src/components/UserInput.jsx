@@ -1,19 +1,7 @@
 import React, {useState} from 'react'
 
-export const UserInput = () => {
-  const [inputValues, setInputValues] = useState({
-    initialInvestment: 0,
-    annualInvestment: 0,
-    expectedReturn: 0,
-    yearsInvested: 0
-  })
-
-  function callUserInput(inputId, val) {
-    setInputValues(prev => ({
-      ...prev,
-      [inputId]: parseFloat(val) || 0
-    }));
-  }
+export const UserInput = ({inputValues, onChangeCUI}) => {
+  
 
   return (
     <section id="user-input">
@@ -25,7 +13,7 @@ export const UserInput = () => {
             name="initial-investment-amount" 
             placeholder="Enter amount in USD" required 
             value={inputValues.initialInvestment}
-            onChange={(e) => callUserInput('initialInvestment', e.target.value)}/>
+            onChange={(e) => onChangeCUI('initialInvestment', e.target.value)}/>
         </p>
         <p>
             <label htmlFor="annual-investment-amount">Annual Investment Amount:</label>
@@ -34,7 +22,7 @@ export const UserInput = () => {
             name="annual-investment-amount" 
             placeholder="Enter amount in USD" required 
             value={inputValues.annualInvestment}
-            onChange={(e) => callUserInput('annualInvestment', e.target.value)}/>
+            onChange={(e) => onChangeCUI('annualInvestment', e.target.value)}/>
         </p>
         <p>
             <label htmlFor="expected-return-amount">Expected Return Investment Amount:</label>
@@ -43,7 +31,7 @@ export const UserInput = () => {
             name="expected-return-amount" 
             placeholder="Enter amount in USD" required 
             value={inputValues.expectedReturn}
-            onChange={(e) => callUserInput('expectedReturn', e.target.value)}/>
+            onChange={(e) => onChangeCUI('expectedReturn', e.target.value)}/>
         </p>
         <p>
             <label htmlFor="years-invested">Years Invested:</label>
@@ -52,7 +40,7 @@ export const UserInput = () => {
             name="years-invested" 
             placeholder="Enter number of years" required 
             value={inputValues.yearsInvested}
-            onChange={(e) => callUserInput('yearsInvested', e.target.value)}/>
+            onChange={(e) => onChangeCUI ('yearsInvested', e.target.value)}/>
         </p>
     
       </div>

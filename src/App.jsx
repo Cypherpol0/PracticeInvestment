@@ -2,6 +2,7 @@ import { Header } from './components/Header'
 import { UserInput } from './components/UserInput'
 import './App.css'
 import { OutputData } from './components/OutputData'
+import { useState } from 'react'
 
 function App() {
   const [inputValues, setInputValues] = useState({

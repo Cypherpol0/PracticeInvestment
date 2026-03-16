@@ -20,3 +20,5 @@ export function calcInvestmentResults({
         }
         return results;
     }
+
+    // Lesson 3 at 10:20 for formatter

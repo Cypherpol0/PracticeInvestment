@@ -8,10 +8,10 @@ import { generatePDFReport } from './utils/generatereport'
 
 function App() {
   const [inputValues, setInputValues] = useState({
-    initialInvestment: 0,
-    annualInvestment: 0,
-    expectedReturn: 0,
-    yearsInvested: 0
+    initialInvestment: 4000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    yearsInvested: 15
   })
 
   const userEnterValid = inputValues.yearsInvested >= 1
@@ -24,7 +24,8 @@ function App() {
 
   function handleGeneratePDF() {
     const resdata = calcInvestmentResults(inputValues);
-    generatepdf({...inputValues, results: resdata});
+    generatePDFReport({...inputValues, results: resdata});
+    //console.log("PDF report generated with data:", {...inputValues, results: resdata});
   }
 
   return (

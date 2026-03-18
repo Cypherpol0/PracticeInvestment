@@ -18,7 +18,7 @@ export function OutputData({inputVal}) {
         {resdata.map(yeardata => {
           const totalInterest = yeardata.EndOfYearValue - yeardata.annualInvestment*yeardata.year - initialInvestment
           const totalAmountInvested = yeardata.EndOfYearValue - totalInterest
-          return
+          return(
           <tr key={yeardata.year}>
             <td>{yeardata.year}</td>
             <td>{yeardata.EndOfYearValue}</td>
@@ -26,6 +26,7 @@ export function OutputData({inputVal}) {
             <td>{totalInterest.toFixed(2)}</td>
             <td>{totalAmountInvested.toFixed(2)}</td>
           </tr>
+          )
           })}
       </tbody>
     </table>

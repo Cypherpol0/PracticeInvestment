@@ -15,4 +15,4 @@ export function generatePDFReport(data) {
 
     let yOffset = 80;
     const pageHeight = doc.internal.pageSize.height;
-}
+} 
